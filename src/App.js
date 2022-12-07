@@ -5,7 +5,7 @@ import { useState } from "react";
 function Article(props) {
   return (
     <article>
-      <h2>{props.body}</h2>
+      <h2>{props.title}</h2>
       {props.body}
     </article>
   );
@@ -102,8 +102,8 @@ function App() {
   } else if (mode === "CREATE") {
     content = (
       <Create
-        onCreate={(title, body) => {
-          const newTopic = { id: nextId, title: title, body: body };
+        onCreate={(_title, _body) => {
+          const newTopic = { id: nextId, title: _title, body: _body };
           const newTopics = [...topics];
           newTopics.push(newTopic);
           setTopics(newTopics);
