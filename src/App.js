@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 // import styles from "./App.module.css";
 import Button from "./button/Button";
 
 function App() {
   const [counter, setCounter] = useState(0);
-  const onClickPlus = () => setCounter((count) => count + 1);
-  const onClickMinus = () => setCounter((count) => count - 1);
+  const onClickPlus = () => setCounter(counter + 1);
+  const onClickMinus = () => setCounter(counter - 1);
   const [keyword, setKeyword] = useState("");
   const onChange = (event) => setKeyword(event.target.value);
 
@@ -28,7 +28,7 @@ function App() {
         placeholder="search"
       />
       <h1>{counter}</h1>
-      <Button onClick={onClickPlus} minusClick={onClickMinus} />
+      <Button plusClick={onClickPlus} minusClick={onClickMinus} />
     </div>
   );
 }
